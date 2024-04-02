@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{webinar.Topic}}
+{% endblock %}
+
+{% block body %}
+	<div class="mb-4">
+		<div>
+			{{webinar.id}}
+		</div>
+		<div class="text-2xl">
+			{{webinar.Topic}}
+		</div>
+		<div class="text-xl">
+			{{webinar.Organization}}
+		</div>
+		<div class="text-xl">
+			{{webinar.Date|date('d. m. Y')}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.Time|date('H:i')}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.Duration}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.Banner}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.ReminderText}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.ReminderSubject}}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			{{webinar.RecordingLink}}
+		</div>
+	</div>
+
+{% endblock %}

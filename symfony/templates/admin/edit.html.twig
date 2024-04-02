@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block bread %}
+	<div class="text-center mb-10">
+		<a href="{{ path('admin') }}">Dashboard</a>
+		→
+		<a href="{{ path('webinar-list') }}">Webinar List</a>
+		→ Edit Webinar
+	</div>
+{% endblock %}
+
+{% block body %}
+	{{ include('admin/_webinar-form.html.twig')}}
+{% endblock %}

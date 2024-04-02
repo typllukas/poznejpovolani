@@ -1,0 +1,62 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div>
+	{{ form_errors(form) }}
+</div>
+<div>
+	{{ form_label(form.topic, 'Topic', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.topic, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.topic) }}
+</div>
+<div>
+	{{ form_label(form.organization, 'Organization', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.organization, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.organization) }}
+</div>
+<div class="panelists" data-index="{{ form.panelists|length > 0 ? form.panelists|last.vars.name + 1 : 0 }}" data-prototype="{{ form_widget(form.panelists.vars.prototype)|e('html_attr') }}">
+	<div class='block text-sm text-gray-700 dark:text-gray-300 font-medium'>Panelists</div>
+	{% for panelistForm in form.panelists %}
+		<div class="panelist" data-panelist-index="{{ loop.index0 }}">
+			{{ form_row(panelistForm.name, {'label_attr': {'class': 'block text-xs text-gray-700 dark:text-gray-300 font-medium'}, 'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+			{{ form_row(panelistForm.email, {'label_attr': {'class': 'block text-xs text-gray-700 dark:text-gray-300 font-medium'}, 'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+		</div>
+	{% endfor %}
+
+</div>
+<button type="button" class="add_item_link ml-4 block text-sm text-gray-700 dark:text-gray-300 font-medium" data-collection-holder-class="panelists">Add another panelist</button>
+<br>
+<div>
+	{{ form_label(form.date, 'Date', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.date, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.date) }}
+</div>
+<div>
+	{{ form_label(form.time, 'Time', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.time, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.time) }}
+</div>
+<div>
+	{{ form_label(form.banner, 'Banner', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.banner, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.banner) }}
+</div>
+<div>
+	{{ form_label(form.ReminderText, 'Reminder text', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	{{ form_widget(form.ReminderText, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2 '}}) }}
+	{{ form_errors(form.ReminderText) }}
+</div>
+<div>
+	{{ form_label(form.modules, 'Module', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+	<div class="grid grid-cols-2 gap-4 mt-1 mb-2">
+		{% for module in form.modules %}
+			<div class="form-checkbox-group">
+				{{ form_widget(module, {'attr': {'class': 'form-checkbox h-5 w-5 text-gray-600 mr-2'}}) }}
+				{{ form_label(module, null, {'label_attr': {'class': 'text-sm text-gray-700 dark:text-gray-300'}}) }}
+			</div>
+		{% endfor %}
+	</div>
+	{{ form_errors(form.modules) }}
+</div>
+<div>
+	<button type='submit' class='block w-full shadow-sm border-transparent bg-gray-600 hover:bg-gray-500 dark:bg-black dark:hover:bg-black text-white rounded-md border p-2 mt-4 mb-2'>Save!</button>
+</div>
+{{ form_end(form) }}

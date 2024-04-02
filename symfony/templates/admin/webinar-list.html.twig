@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Webinar List
+{% endblock %}
+
+{% block bread %}
+	<div class="text-center mb-10">
+		<a href="{{ path('admin') }}">Dashboard</a>
+		→
+		<a href="{{ path('webinar-list') }}">Webinar List</a>
+	</div>
+{% endblock %}
+
+{% block body %}
+	<br>
+	<span class="px-2 rounded-md bg-gray-200 dark:bg-gray-700">
+		<a href="{{ path('add') }}">Add new webinar</a>
+	</span>
+	<br>
+	<br>
+	<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+		{% if webinars|length > 0 %}
+			{% for webinar in webinars %}
+				<div class="mb-4">
+					<div class="text-2xl">
+						{{ webinar.Topic }}
+					</div>
+					<div class="text-xl text-gray-500 dark:text-gray-400">
+						{{ webinar.Date|date('d. m. Y') }}
+					</div>
+					<div>
+						<form action="{{ path('generate-webinar', {'id': webinar.id}) }}" method="post">
+							<button type="submit" class="block w-full shadow-sm border-transparent bg-gray-600 hover:bg-gray-500 dark:bg-black dark:hover:bg-black text-white rounded-md border p-2 mt-4 mb-2">Generate!</button>
+						</form>
+					</div>
+					<div class="px-2 rounded-md mb-1 bg-gray-200 dark:bg-gray-700">
+						<a href="{{ path('edit', {webinar: webinar.id}) }}">Edit</a>
+					</div>
+					{% if webinar.zoomId %}
+						<div class="px-2 rounded-md bg-gray-200 dark:bg-gray-700">
+							<a href="https://zoom.us/webinar/{{ webinar.zoomId }}" target="_blank">Open In Zoom</a>
+						</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		{% else %}
+			<div>No webinar in the database.</div>
+		{% endif  %}
+	</div>
+{% endblock %}
