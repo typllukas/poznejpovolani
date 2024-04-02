@@ -1,0 +1,49 @@
+{
+    "agenda": "Fakultní nemocnice Blablabla\nMgr. Blablah",
+    "duration": 45,
+    "settings": {
+        "allow_multiple_devices": true,
+        "approval_type": 0,
+        "attendees_and_panelists_reminder_email_notification": {
+            "enable": true,
+            "type": 3
+        },
+        "audio": "both",
+        "auto_recording": "cloud",
+        "contact_email": "prezentace@poznejpovolani.cz",
+        "contact_name": "PoznejPovolání, z. s.",
+        "email_language": "en-US",
+        "follow_up_absentees_email_notification": {
+            "enable": true,
+            "type": 1
+        },
+        "follow_up_attendees_email_notification": {
+            "enable": true,
+            "type": 1
+        },
+        "host_video": true,
+        "panelist_authentication": false,
+        "meeting_authentication": false,
+        "add_watermark": false,
+        "on_demand": true,
+        "panelists_invitation_email_notification": true,
+        "panelists_video": true,
+        "post_webinar_survey": true,
+        "practice_session": true,
+        "question_and_answer": {
+            "allow_submit_questions": true,
+            "allow_anonymous_questions": true,
+            "answer_questions": "all",
+            "attendees_can_comment": true,
+            "attendees_can_upvote": true,
+            "enable": true
+        },
+        "registrants_email_notification": false,
+        "registrants_restrict_number": 0,
+        "show_share_button": false
+    },
+    "start_time": "2024-03-11T15:00:00",
+    "timezone": "Europe/Prague",
+    "topic": "Testing webinar created by Symfony app",
+    "type": 5
+}
