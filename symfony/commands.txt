@@ -106,10 +106,28 @@ UBUNTU SERVER:
 
     sudo systemctl status <service_name, e.g.docker>
 
-
     q
                 -quit/exit from the lists etc.
 
+    ping google.com
+    ping github.com
+    ping <ip_address>
+            -checking connectivity
+    nslookup github.com
+            -checking DNS resolution 
+
+    ping6 ipv6.google.com
+
+    ip addr show
+        - list all network interfaces and their configurations
+
+    sudo ufw status 
+            (ufw: uncomplicated firewall)
+    
+    sudo ufw allow https
+    sudo ufw allow 443
+
+    
 
 SERVER
 
