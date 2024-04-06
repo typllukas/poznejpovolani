@@ -94,6 +94,24 @@ DOCKER
 
 UBUNTU SERVER:
 
+
+
+
+    wget
+        -downloading files from internet
+
+    ls -la
+        -list the content of current directory
+
+    mkdir ...
+    mkdir /../...
+        -make directory
+
+    sudo mv
+        -moving files
+
+    git clone https://github.com/typllukas/poznejpovolani.git poznejpovolani
+
     sudo apt update
     &&
     sudo apt upgrade -y
@@ -108,6 +126,7 @@ UBUNTU SERVER:
 
     q
                 -quit/exit from the lists etc.
+    
 
     ping google.com
     ping github.com
