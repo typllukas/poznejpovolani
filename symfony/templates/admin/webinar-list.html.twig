@@ -13,7 +13,7 @@
 
 {% block body %}
 	<br>
-	<span class="px-2 rounded-md bg-gray-200 dark:bg-gray-700">
+	<span class="px-2 rounded-md bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600">
 		<a href="{{ path('add') }}">Add new webinar</a>
 	</span>
 	<br>
@@ -30,14 +30,14 @@
 					</div>
 					<div>
 						<form action="{{ path('generate-webinar', {'id': webinar.id}) }}" method="post">
-							<button type="submit" class="block w-full shadow-sm border-transparent bg-gray-600 hover:bg-gray-500 dark:bg-black dark:hover:bg-black text-white rounded-md border p-2 mt-4 mb-2">Generate!</button>
+							<button type="submit" class="block shadow-sm border-transparent bg-gray-600 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-rose-800 text-white rounded-md border p-2 mt-4 mb-2">Generate!</button>
 						</form>
 					</div>
-					<div class="px-2 rounded-md mb-1 bg-gray-200 dark:bg-gray-700">
+					<div class="px-2 rounded-md mb-1 bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 inline-block">
 						<a href="{{ path('edit', {webinar: webinar.id}) }}">Edit</a>
 					</div>
 					{% if webinar.zoomId %}
-						<div class="px-2 rounded-md bg-gray-200 dark:bg-gray-700">
+						<div class="px-2 rounded-md bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 inline-block">
 							<a href="https://zoom.us/webinar/{{ webinar.zoomId }}" target="_blank">Open In Zoom</a>
 						</div>
 					{% endif %}
