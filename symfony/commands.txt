@@ -59,9 +59,8 @@ DOCKER
                 build docker images - The --pull option forces Docker to check for newer versions of the images from the remote registry, even if an older version is available locally. 
 
 
-
-    docker compose up -d
-    docker compose -f docker-compose.nodejs.yml up -d
+    docker-compose --env-file .env up -d
+    docker compose --env-file .env -f docker-compose.nodejs.yml up -d
                 compose containers, development mode
 
 
@@ -94,9 +93,6 @@ DOCKER
 
 UBUNTU SERVER:
 
-
-
-
     wget
         -downloading files from internet
 
@@ -106,6 +102,9 @@ UBUNTU SERVER:
     mkdir ...
     mkdir /../...
         -make directory
+
+    nano ...   
+        -open or create a file by nano
 
     sudo mv
         -moving files
